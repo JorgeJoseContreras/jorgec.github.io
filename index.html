@@ -97,8 +97,6 @@
             { symbol: 'Robinhood', name: '20', amount: 2111.61, price: 103.05, value: 2214.66 },
             { symbol: 'Fidelity', name: '6', amount: 948.90, price: 55.83, value: 1004.73 },
             { symbol: 'Coinbase', name: '12', amount: 686.42, price: 0.00, value: 686.42 },
-            { symbol: 'AMZN', name: 'Amazon.com Inc.', amount: 20, price: 120, value: 2400 },
-            { symbol: 'TSLA', name: 'Tesla Inc.', amount: 10, price: 250, value: 2500 },
         ];
         let index = 0;
         let isTitleTyped = false;
@@ -138,10 +136,10 @@
             const headerRow = document.createElement('thead');
             headerRow.innerHTML = `
                 <tr>
-                    <th>Stock Symbol</th>
-                    <th>Company Name</th>
-                    <th>Amount Held</th>
-                    <th>Current Price</th>
+                    <th>Company</th>
+                    <th>Holdings</th>
+                    <th>Invested</th>
+                    <th>Cash</th>
                     <th>Total Value</th>
                 </tr>
             `;
