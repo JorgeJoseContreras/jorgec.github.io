@@ -88,8 +88,10 @@
         <div class="typewriter" id="typewriter"></div>
     </div>
     <script>
+        // Separate data definitions
         const titleText = "<span class='title'>Contreras Capital Group Limited Company</span>";
         const holdingsTitleText = "\nHoldings\n";
+
         const holdingsData = [
             { symbol: 'Landa', name: '4', amount: 130.52, price: 120.30, value: 250.56 },
             { symbol: 'Fundrise', name: '3', amount: 243.03, price: 0.00, value: 243.03 },
@@ -98,6 +100,16 @@
             { symbol: 'Fidelity', name: '6', amount: 948.90, price: 55.83, value: 1004.73 },
             { symbol: 'Coinbase', name: '12', amount: 686.42, price: 0.00, value: 686.42 },
         ];
+
+        const financialsData = {
+            navPrice: 1.04,
+            unitsOutstanding: 5000,
+            marketCap: 5200.46,
+            assets: 5200.46,
+            liabilities: 0.00,
+            inquiriesEmail: "jorgec@usa.com"
+        };
+
         let index = 0;
         let isTitleTyped = false;
         let isHoldingsTitleTyped = false;
@@ -128,38 +140,40 @@
                 }
             }
         }
+
         function displayTable() {
-    const holdingsTable = document.createElement('table');
-    holdingsTable.classList.add('holdings-table');
-    holdingsTable.style.opacity = 1; // Show table when ready
-    const headerRow = document.createElement('thead');
-    headerRow.innerHTML = `
-        <tr>
-            <th>Company</th>
-            <th>Holdings</th>
-            <th>Invested</th>
-            <th>Cash</th>
-            <th>Total Value</th>
-        </tr>
-    `;
-    holdingsTable.appendChild(headerRow);
-    const bodyRows = document.createElement('tbody');
-    holdingsData.forEach(stock => {
-        const row = document.createElement('tr');
-        row.style.opacity = 0; // Initially hide row
-        row.innerHTML = `
-            <td>${stock.symbol}</td>
-            <td>${stock.name}</td>
-            <td>$${stock.amount.toFixed(2)}</td> <!-- Corrected column for Invested -->
-            <td>$${stock.price.toFixed(2)}</td> <!-- Corrected column for Cash -->
-            <td>$${stock.value.toFixed(2)}</td>
-        `;
-        bodyRows.appendChild(row);
-    });
-    holdingsTable.appendChild(bodyRows);
-    document.getElementById("typewriter").appendChild(holdingsTable);
-    fadeInTableRows(bodyRows.querySelectorAll('tr'));
-}
+            const holdingsTable = document.createElement('table');
+            holdingsTable.classList.add('holdings-table');
+            holdingsTable.style.opacity = 1; // Show table when ready
+            const headerRow = document.createElement('thead');
+            headerRow.innerHTML = `
+                <tr>
+                    <th>Company</th>
+                    <th>Holdings</th>
+                    <th>Invested</th>
+                    <th>Cash</th>
+                    <th>Total Value</th>
+                </tr>
+            `;
+            holdingsTable.appendChild(headerRow);
+            const bodyRows = document.createElement('tbody');
+            holdingsData.forEach(stock => {
+                const row = document.createElement('tr');
+                row.style.opacity = 0; // Initially hide row
+                row.innerHTML = `
+                    <td>${stock.symbol}</td>
+                    <td>${stock.name}</td>
+                    <td>$${stock.amount.toFixed(2)}</td>
+                    <td>$${stock.price.toFixed(2)}</td>
+                    <td>$${stock.value.toFixed(2)}</td>
+                `;
+                bodyRows.appendChild(row);
+            });
+            holdingsTable.appendChild(bodyRows);
+            document.getElementById("typewriter").appendChild(holdingsTable);
+            fadeInTableRows(bodyRows.querySelectorAll('tr'));
+        }
+
         function fadeInTableRows(rows) {
             rows.forEach((row, rowIndex) => {
                 setTimeout(() => {
@@ -171,7 +185,7 @@
 
         function typeAdditionalInfo() {
             const additionalInfo = `
-<span class='financials-title bold'>Financials</span>\n\n<span class='bold'>NAV Price:</span> $1.04\n<span class='bold'>Units Outstanding:</span> 5,000\n<span class='bold'>Market Capitalization:</span> $5200.46\n\n<span class='bold'>Assets:</span> $5200.46\n<span class='bold'>Liabilities:</span> $0.00\n\n<span class='bold'>Inquiries:</span> <a class="email-link" href="mailto:jorgec@usa.com">jorgec@usa.com</a>\n\n© Copyright 2024 Jorge Jose Contreras`;
+<span class='financials-title bold'>Financials</span>\n\n<span class='bold'>NAV Price:</span> $${financialsData.navPrice.toFixed(2)}\n<span class='bold'>Units Outstanding:</span> ${financialsData.unitsOutstanding.toLocaleString()}\n<span class='bold'>Market Capitalization:</span> $${financialsData.marketCap.toFixed(2)}\n\n<span class='bold'>Assets:</span> $${financialsData.assets.toFixed(2)}\n<span class='bold'>Liabilities:</span> $${financialsData.liabilities.toFixed(2)}\n\n<span class='bold'>Inquiries:</span> <a class="email-link" href="mailto:${financialsData.inquiriesEmail}">${financialsData.inquiriesEmail}</a>\n\n© Copyright 2024 Jorge Jose Contreras`;
             const additionalInfoDiv = document.createElement('div');
             additionalInfoDiv.classList.add('additional-info');
             document.querySelector('.container').appendChild(additionalInfoDiv);
