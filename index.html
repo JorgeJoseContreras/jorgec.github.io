@@ -128,40 +128,38 @@
                 }
             }
         }
-
         function displayTable() {
-            const holdingsTable = document.createElement('table');
-            holdingsTable.classList.add('holdings-table');
-            holdingsTable.style.opacity = 1; // Show table when ready
-            const headerRow = document.createElement('thead');
-            headerRow.innerHTML = `
-                <tr>
-                    <th>Company</th>
-                    <th>Holdings</th>
-                    <th>Invested</th>
-                    <th>Cash</th>
-                    <th>Total Value</th>
-                </tr>
-            `;
-            holdingsTable.appendChild(headerRow);
-            const bodyRows = document.createElement('tbody');
-            holdingsData.forEach(stock => {
-                const row = document.createElement('tr');
-                row.style.opacity = 0; // Initially hide row
-                row.innerHTML = `
-                    <td>${stock.symbol}</td>
-                    <td>${stock.name}</td>
-                    <td>$${stock.price.toFixed(2)}</td>
-                    <td>$${stock.price.toFixed(2)}</td>
-                    <td>$${stock.value.toFixed(2)}</td>
-                `;
-                bodyRows.appendChild(row);
-            });
-            holdingsTable.appendChild(bodyRows);
-            document.getElementById("typewriter").appendChild(holdingsTable);
-            fadeInTableRows(bodyRows.querySelectorAll('tr'));
-        }
-
+    const holdingsTable = document.createElement('table');
+    holdingsTable.classList.add('holdings-table');
+    holdingsTable.style.opacity = 1; // Show table when ready
+    const headerRow = document.createElement('thead');
+    headerRow.innerHTML = `
+        <tr>
+            <th>Company</th>
+            <th>Holdings</th>
+            <th>Invested</th>
+            <th>Cash</th>
+            <th>Total Value</th>
+        </tr>
+    `;
+    holdingsTable.appendChild(headerRow);
+    const bodyRows = document.createElement('tbody');
+    holdingsData.forEach(stock => {
+        const row = document.createElement('tr');
+        row.style.opacity = 0; // Initially hide row
+        row.innerHTML = `
+            <td>${stock.symbol}</td>
+            <td>${stock.name}</td>
+            <td>$${stock.amount.toFixed(2)}</td> <!-- Corrected column for Invested -->
+            <td>$${stock.price.toFixed(2)}</td> <!-- Corrected column for Cash -->
+            <td>$${stock.value.toFixed(2)}</td>
+        `;
+        bodyRows.appendChild(row);
+    });
+    holdingsTable.appendChild(bodyRows);
+    document.getElementById("typewriter").appendChild(holdingsTable);
+    fadeInTableRows(bodyRows.querySelectorAll('tr'));
+}
         function fadeInTableRows(rows) {
             rows.forEach((row, rowIndex) => {
                 setTimeout(() => {
