@@ -30,6 +30,17 @@
         }
     </style>
 </head>
+<body onload="passwordProtect()">
+    <script>
+        function passwordProtect() {
+            var password = "jorge"; // Set your password here
+            var userInput = prompt("Enter Password:");
+            if (userInput !== password) {
+                alert("Incorrect password. Access denied.");
+                document.body.innerHTML = "";
+            }
+        }
+    </script>
     <div class="container">
         <header style="text-align: center;">
             <h1>Jorge Contreras</h1>
