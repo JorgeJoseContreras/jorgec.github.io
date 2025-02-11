@@ -3,204 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contreras Capital Group</title>
+    <title>Resume</title>
     <style>
         body {
-            background-color: black;
-            color: #00FF00; /* Matrix green color */
-            font-family: 'Courier New', Courier, monospace; /* Console font */
-            font-size: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            position: relative;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
         .container {
-            text-align: center;
-            position: relative;
-            width: 80%;
-            max-width: 800px;
+            width: 850px; max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            animation: pulseShadow 4s infinite alternate; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        
+            margin: auto;
+            background: white;
+            padding: 20px;
+            animation: pulseShadow 4s infinite alternate; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
         }
         .typewriter {
-            white-space: pre; /* Preserve whitespace for newlines */
-            overflow: hidden; /* Hide overflow */
-            display: inline-block;
-            font-family: 'Courier New', Courier, monospace; /* Console font */
-            margin-bottom: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 3s steps(40, end) forwards;
         }
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
         }
-        .holdings-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            opacity: 0; /* Initially hide table */
+    @keyframes pulseShadow {
+            0% { box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); }
+            100% { box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); }
         }
-        .holdings-table th, .holdings-table td {
-            border: 1px solid #00FF00;
-            padding: 10px;
-            text-align: left;
-        }
-        .holdings-table th {
-            background-color: #333;
-        }
-        .additional-info {
-            margin-top: 20px;
-            white-space: pre; /* Preserve whitespace for newlines */
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center; /* Center-align the text */
-        }
-        footer {
-            margin-top: 20px;
-            white-space: pre; /* Preserve whitespace for newlines */
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .email-link {
-            color: #00FF00;
-            text-decoration: none;
-        }
-        .email-link:hover {
-            text-decoration: underline;
-        }
-        .bold {
-            font-weight: bold;
-        }
-        .financials-title {
-            font-size: 28px; /* Larger font size for "Financials" */
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #00FF00; }
+    @media screen and (max-width: 768px) {
+            body {
+                margin: 10px;
+                padding: 5px;
+            }
+            .container {
+                width: 95%;
+                max-width: 95%;
+                padding: 10px;
+            }
+            .section p, .section ul li {
+                font-size: 0.9em;
+            }
+            h1, h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="typewriter" id="typewriter"></div>
+        <header style="text-align: center;">
+            <h1 class="typewriter">Jorge Contreras</h1>
+            <p class="typewriter"> jorgec@usa.com | 954 999 7574 | <a href="https://www.linkedin.com/in/jorgejcontreras/" style="color: blue; text-decoration: none;">LinkedIn</a></p>
+        </header>
+        
+        <!-- Education on top -->
+        <div class="section">
+            <h2 class="typewriter">Education</h2>
+            <p class="typewriter" style="margin-bottom: 2px;"><strong>B.B.A. in Finance</strong> - Florida Atlantic University (August 2024)</p>
+            <p class="typewriter" style="margin-top: 0; margin-bottom: 2px;"><strong>B.B.A. in Accounting</strong> - Florida Atlantic University (Expected July 2026)</p>
+        </div>
+        <!-- Experience below Education -->
+        <div class="section">
+            <h2 class="typewriter">Experience</h2>
+            <!-- Accountant -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Accountant</strong> - <a href="https://www.dcconstructionassociates.com/" style="color: blue; text-decoration: none;">DC Construction Associates, Inc.</a> (<span style="font-size: 0.9em;">Jun 2024 - Present</span>) | <span style="font-size: 0.9em;">Delray Beach, FL</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Processing and payment of invoices totaling over $200 million in value.</li>
+                <li class="typewriter">Reconciling credit card charges for more than 60 authorized users.</li>
+            </ul>
+            <!-- Bookkeeping Assistant -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Bookkeeping Assistant</strong> - <a href="https://www.asaspares.com" style="color: blue; text-decoration: none;">Airline Spares America, Inc.</a> (<span style="font-size: 0.9em;">Dec 2022 – Jan 2024</span>) | <span style="font-size: 0.9em;">Deerfield Beach, FL</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Analyze trends, variances, and key financial metrics to provide insights for decision-making.</li>
+                <li class="typewriter">Prepared, processed, and sent essential documents such as invoices and expense reports.</li>
+                <li class="typewriter">Assisted in the processing of invoices totaling over $3 million in value.</li>
+            </ul>
+            <!-- Administrative Assistant (Functional Rehab) -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Administrative Assistant</strong> - <a href="https://www.ftxwellness.com" style="color: blue; text-decoration: none;">Functional Rehab Solutions, LLC</a> (<span style="font-size: 0.9em;">Jan 2024 - Jun 2024</span>) | <span style="font-size: 0.9em;">Delray Beach, FL</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Answer and direct incoming calls, greet visitors, and manage the front desk area.</li>
+                <li class="typewriter">Coordinate schedules, maintain office inventory, and handle general administrative tasks.</li>
+            </ul>
+            <!-- Sales & Finance Intern -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Sales & Finance Intern</strong> - <a href="https://www.asaspares.com" style="color: blue; text-decoration: none;">Airline Spares America, Inc.</a> (<span style="font-size: 0.9em;">Aug 2022 – Nov 2022</span>) | <span style="font-size: 0.9em;">Deerfield Beach, FL</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Research and analyze pricing trends for airplane parts in different markets & increase efficiency.</li>
+                <li class="typewriter">Work with sales team to evaluate the financial viability of potential sales opportunities.</li>
+                <li class="typewriter">Collaborate with sales to maintain customer relationships.</li>
+            </ul>
+            <!-- Data Entry Clerk -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Data Entry Clerk</strong> - <a href="https://www.asiaero.com" style="color: blue; text-decoration: none;">ASI Aero, Inc.</a> (<span style="font-size: 0.9em;">Nov 2021 – Aug 2022</span>) | <span style="font-size: 0.9em;">Boca Raton, FL</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Enforce strict quality control for receiving multiple shipments daily, report discrepancies and verify orders.</li>
+                <li class="typewriter">Implement a cost-effective inventory system and assess shipping/handling periods.</li>
+            </ul>
+            <!-- Medical Tester -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Medical Tester</strong> - <a href="https://www.ivconcierge.com" style="color: blue; text-decoration: none;">Healthcare Concierge, PLLC</a> (<span style="font-size: 0.9em;">Jun 2021 - Dec 2021</span>) | <span style="font-size: 0.9em;">Palm Beach - Dade</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Perform COVID-19 tests, handle sample collection, and maintain proper safety protocols.</li>
+                <li class="typewriter">Record patient data accurately, coordinate scheduling, and deliver test results promptly.</li>
+            </ul>
+            <!-- Assistant Part-Time -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Assistant Part-Time</strong> - <a href="https://www.sunnilandpatio.com" style="color: blue; text-decoration: none;">Sunniland Patio, Inc.</a> (<span style="font-size: 0.9em;">Jan 2020 – Dec 2021</span>) | <span style="font-size: 0.9em;">Boca Raton, FL</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Categorize documents based on content and index them appropriately for streamlined retrieval.</li>
+                <li class="typewriter">Manage physical paperwork, prepare shipping documents, labels, invoices, and customs forms.</li>
+            </ul>
+            <!-- Administrative Assistant (Airline Spares) -->
+            <p class="typewriter" style="margin-bottom: 0px; font-size: 1.1em;"><strong>Administrative Assistant</strong> - <a href="https://www.asaspares.com" style="color: blue; text-decoration: none;">Airline Spares America, Inc.</a> (<span style="font-size: 0.9em;">Dec 2018 – Dec 2020</span>) | <span style="font-size: 0.9em;">Deerfield Beach, FL</span></p>
+            <ul style="margin-top: 0px; list-style-type: disc; color: black; padding-left: 20px;">
+                <li class="typewriter">Verify correct information, record minutes in team meetings, prepare detailed sales and inventory reports.</li>
+                <li class="typewriter">Contact vendors to receive quotes, analyze, compile and present data to the sales team.</li>
+            </ul>
+        </div>
+
+        <!-- Memberships -->
+        <div class="section">
+            <h2 class="typewriter">Memberships</h2>
+            <p class="typewriter" style="margin: 0;"><strong>Notary Public, Florida</strong> | Commission #HH582781 (Aug 2024 - Present)</p>
+            <p class="typewriter" style="margin: 0;"><strong>The American Marketing Association, FAU</strong> (Jan 2021 - Present)</p>
+            <p class="typewriter" style="margin: 0;"><strong>The Investor’s Association, FAU</strong> (Sep 2020 - Present)</p>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="typewriter">Skills</h2>
+            <p class="typewriter" style="margin: 0;">Adobe CC, AWS, Component Control, HTML, ILS, Microsoft Office, MOS Excel, QuickBooks</p>
+        </div>    
     </div>
-    <script>
-        // Separate data definitions
-        const titleText = "<span class='title'>Contreras Capital Group Limited Company</span>";
-        const holdingsTitleText = "\nHoldings\n";
-
-        const holdingsData = [
-            { symbol: 'Landa', name: '4', amount: 130.52, price: 120.30, value: 250.56 },
-            { symbol: 'Fundrise', name: '3', amount: 243.03, price: 0.00, value: 243.03 },
-            { symbol: 'Public', name: '52', amount: 911.29, price: 1.13, value: 912.42 },
-            { symbol: 'Robinhood', name: '20', amount: 2111.61, price: 103.05, value: 2214.66 },
-            { symbol: 'Fidelity', name: '6', amount: 948.90, price: 55.83, value: 1004.73 },
-            { symbol: 'Coinbase', name: '12', amount: 686.42, price: 0.00, value: 686.42 },
-        ];
-
-        const financialsData = {
-            navPrice: 10.00,
-            unitsOutstanding: 12,
-            marketCap: 120.00,
-            assets: 120.00,
-            liabilities: 0.00,
-            inquiriesEmail: "jorgec@usa.com"
-        };
-
-        let index = 0;
-        let isTitleTyped = false;
-        let isHoldingsTitleTyped = false;
-
-        function type() {
-            if (!isTitleTyped) {
-                if (index < titleText.length) {
-                    document.getElementById("typewriter").innerHTML = titleText.slice(0, index + 1);
-                    index++;
-                    setTimeout(type, 150); // Speed for title
-                } else {
-                    isTitleTyped = true;
-                    index = 0;
-                    setTimeout(typeHoldingsTitle, 500); // Pause before typing holdings title
-                }
-            }
-        }
-
-        function typeHoldingsTitle() {
-            if (!isHoldingsTitleTyped) {
-                if (index < holdingsTitleText.length) {
-                    document.getElementById("typewriter").innerHTML += holdingsTitleText.slice(index, index + 1);
-                    index++;
-                    setTimeout(typeHoldingsTitle, 150); // Speed for holdings title
-                } else {
-                    isHoldingsTitleTyped = true;
-                    setTimeout(displayTable, 500); // Pause before displaying table
-                }
-            }
-        }
-
-        function displayTable() {
-            const holdingsTable = document.createElement('table');
-            holdingsTable.classList.add('holdings-table');
-            holdingsTable.style.opacity = 1; // Show table when ready
-            const headerRow = document.createElement('thead');
-            headerRow.innerHTML = `
-                <tr>
-                    <th>Company</th>
-                    <th>Shares</th>
-                    <th>Avg Cost</th>
-                    <th>Last Price</th>
-                    <th>Aggregate</th>
-                </tr>
-            `;
-            holdingsTable.appendChild(headerRow);
-            const bodyRows = document.createElement('tbody');
-            holdingsData.forEach(stock => {
-                const row = document.createElement('tr');
-                row.style.opacity = 0; // Initially hide row
-                row.innerHTML = `
-                    <td>${stock.symbol}</td>
-                    <td>${stock.name}</td>
-                    <td>$${stock.amount.toFixed(2)}</td>
-                    <td>$${stock.price.toFixed(2)}</td>
-                    <td>$${stock.value.toFixed(2)}</td>
-                `;
-                bodyRows.appendChild(row);
-            });
-            holdingsTable.appendChild(bodyRows);
-            document.getElementById("typewriter").appendChild(holdingsTable);
-            fadeInTableRows(bodyRows.querySelectorAll('tr'));
-        }
-
-        function fadeInTableRows(rows) {
-            rows.forEach((row, rowIndex) => {
-                setTimeout(() => {
-                    row.style.opacity = 1;
-                }, (rowIndex + 1) * 500); // Delay each row by 500ms
-            });
-            setTimeout(typeAdditionalInfo, rows.length * 500 + 500); // Display additional info after all rows are visible
-        }
-
-        function typeAdditionalInfo() {
-            const additionalInfo = `
-<span class='financials-title bold'>Financials</span>\n\n<span class='bold'>NAV Price:</span> $${financialsData.navPrice.toFixed(2)}\n<span class='bold'>Units Outstanding:</span> ${financialsData.unitsOutstanding.toLocaleString()}\n<span class='bold'>Market Capitalization:</span> $${financialsData.marketCap.toFixed(2)}\n\n<span class='bold'>Assets:</span> $${financialsData.assets.toFixed(2)}\n<span class='bold'>Liabilities:</span> $${financialsData.liabilities.toFixed(2)}\n\n<span class='bold'>Inquiries:</span> <a class="email-link" href="mailto:${financialsData.inquiriesEmail}">${financialsData.inquiriesEmail}</a>\n\n© Copyright 2024 Jorge Jose Contreras`;
-            const additionalInfoDiv = document.createElement('div');
-            additionalInfoDiv.classList.add('additional-info');
-            document.querySelector('.container').appendChild(additionalInfoDiv);
-            let infoIndex = 0;
-            function typeInfo() {
-                if (infoIndex < additionalInfo.length) {
-                    additionalInfoDiv.innerHTML = additionalInfo.slice(0, infoIndex + 1);
-                    infoIndex++;
-                    setTimeout(typeInfo, 50); // Faster typing speed for additional info
-                }
-            }
-            typeInfo();
-        }
-
-        window.onload = type;
-    </script>
 </body>
 </html>
